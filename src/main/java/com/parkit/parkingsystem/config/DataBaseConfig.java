@@ -16,7 +16,10 @@ public class DataBaseConfig {
 	public Connection getConnection() throws ClassNotFoundException, SQLException {
 		logger.info("Create DB connection");
 		Class.forName("com.mysql.cj.jdbc.Driver");
-		return DriverManager.getConnection("jdbc:mysql://localhost:3306/test", "root", "rootroot");
+		// return DriverManager.getConnection("jdbc:mysql://localhost:3306/test",
+		// "root", "rootroot");
+		return DriverManager.getConnection("jdbc:mysql://localhost:3306/test", "root", System.getenv("password_bdd"));
+		// FIXME: récupérer la variable d'environnement pour la base de données
 	}
 
 	public void closeConnection(Connection con) {

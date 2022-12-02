@@ -23,42 +23,58 @@ public class Ticket {
 	}
 
 	public ParkingSpot getParkingSpot() {
-		return parkingSpot;
+		if (this.parkingSpot != null) {
+			return new ParkingSpot(parkingSpot.getId(), parkingSpot.getParkingType(), parkingSpot.isAvailable());
+		}
+		return null;
 	}
 
-	public void setParkingSpot(ParkingSpot parkingSpot) {
-		this.parkingSpot = parkingSpot;
+	public void setParkingSpot(ParkingSpot pParkingSpot) {
+		if (pParkingSpot != null) {
+			this.parkingSpot = new ParkingSpot(pParkingSpot.getId(), pParkingSpot.getParkingType(),
+					pParkingSpot.isAvailable());
+		}
 	}
 
 	public String getVehicleRegNumber() {
-		return vehicleRegNumber;
+		return this.vehicleRegNumber;
 	}
 
-	public void setVehicleRegNumber(String vehicleRegNumber) {
-		this.vehicleRegNumber = vehicleRegNumber;
+	public void setVehicleRegNumber(String pVehicleRegNumber) {
+		this.vehicleRegNumber = pVehicleRegNumber;
 	}
 
 	public double getPrice() {
-		return price;
+		return this.price;
 	}
 
-	public void setPrice(double price) {
-		this.price = price;
+	public void setPrice(double pPrice) {
+		this.price = pPrice;
 	}
 
 	public Date getInTime() {
-		return inTime;
+		if (this.inTime != null) {
+			return new Date(this.inTime.getTime());
+		}
+		return null;
 	}
 
-	public void setInTime(Date inTime) {
-		this.inTime = inTime;
+	public void setInTime(Date pInTime) {
+		if (pInTime != null) {
+			this.inTime = new Date(pInTime.getTime());
+		}
 	}
 
 	public Date getOutTime() {
-		return outTime;
+		if (this.outTime != null) {
+			return new Date(this.outTime.getTime());
+		}
+		return null;
 	}
 
-	public void setOutTime(Date outTime) {
-		this.outTime = outTime;
+	public void setOutTime(Date pOutTime) {
+		if (pOutTime != null) {
+			this.outTime = new Date(pOutTime.getTime());
+		}
 	}
 }
